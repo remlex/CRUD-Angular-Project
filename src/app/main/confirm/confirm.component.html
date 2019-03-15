@@ -1,0 +1,62 @@
+<app-nav></app-nav>
+
+<div class="page">
+    
+  <app-header></app-header>
+
+<!-- Breadcrumb-->
+<div class="breadcrumb-holder">
+  <div class="container-fluid">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="dashboard">Home</a></li>
+      <li class="breadcrumb-item active">Forms</li>
+    </ul>
+  </div>
+</div>
+<section class="forms">
+  <div class="container-fluid">
+    <!-- Page Header-->
+    <!-- <header> 
+    </header> -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header d-flex align-items-center">
+            <h4>Basic Form</h4>
+          </div>
+          <div class="card-body">
+            <p>Confirm Registration</p>
+            <form [ngModel]="f">
+                <div class="form-group row">  
+                  <div class="col-sm-8">
+                    <!-- <input id="qty" type="number" name="qty" placeholder="0.00" class="form-control form-control-success" [(ngModel)]="computeForm.qty" (blur)="fetchVal()"  required><small class="form-text">Enter Qty</small> -->
+                  </div>
+                </div>
+
+                <div class="form-group row">  
+                    <!-- *ngFor="vres of vresult" -->
+                  <div class="col-sm-8">
+                    <span>Solution: {{product.amount}}</span>
+                    <!-- <input id="qty" type="number" name="qty" placeholder="0.00" class="form-control form-control-success" [(ngModel)]="computeForm.qty" (blur)="fetchVal()"  required><small class="form-text">Enter Qty</small> -->
+                    <!-- <div class="form-group row">                         
+                      <label class="col-sm-2">Grand Total</label>
+                      <div class="col-sm-4">
+                        <input id="id" type="text" name="id" placeholder="0.00" readonly="readonly" class="form-control form-control-success" [(ngModel)]="confirmForm.id" required><small class="form-text">Total</small>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+              
+              <div class="form-group row">       
+                  <button type="button" class="btn btn-primary"> Continue >> </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <app-footer></app-footer>
+</div>

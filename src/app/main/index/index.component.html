@@ -1,0 +1,30 @@
+<div class="page login-page">
+      <div class="container">
+        <div class="form-outer text-center d-flex align-items-center">
+          <div class="form-inner">
+
+              <!-- <div *ngIf="message" class="alert alert-danger text-center " style="width: 40%; font-size: 16px" >{{message}}</div> -->
+
+            <div class="logo text-uppercase"><span>Login</span><strong class="text-primary">Dashboard</strong></div>
+            <form class="text-left form-validate" (keyup.enter)="onSubmit()">
+              <div class="form-group-material">
+                <label for="email" class="label-material">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your Email" class="input-material" [(ngModel)]="loginForm.email" required>
+              </div>
+              <div class="form-group-material">
+                <label for="password" class="label-material" data-error="Required Field!">Password</label>
+                <input type="password" id="password" name="password" placeholder="xxxxxxxxxx" class="input-material" [(ngModel)]="loginForm.password" required>
+              </div>
+              <div class="form-group text-center">
+                <button type="button" class="btn btn-primary float-left" [disabled]="!ng-invalid" (click)="onSubmit()"><i class="icon-login"></i> Save </button>
+              </div>
+            </form>
+            <!-- <button class="btn btn-default" (click)="showSuccess()">Toastr Tester</button> -->
+            <a href="#" class="forgot-pass">Forgot Password?</a><small>Do not have an account? </small><a href="register" class="signup">Signup</a>
+          </div>
+          <div class="copyrights text-center">
+            <p>Design by <a href="https://bootstrapious.com" class="external">Remlex</a></p>
+          </div>
+        </div>
+      </div>
+    </div>

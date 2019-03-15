@@ -1,0 +1,111 @@
+<app-nav></app-nav>
+
+<div class="page">
+    
+  <app-header></app-header>
+
+<!-- Breadcrumb-->
+<div class="breadcrumb-holder">
+  <div class="container-fluid">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="dashboard">Home</a></li>
+      <li class="breadcrumb-item active">Forms</li>
+    </ul>
+  </div>
+</div>
+<section class="forms">
+  <div class="container-fluid">
+    <!-- Page Header-->
+    <!-- <header> 
+    </header> -->
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card">
+          <div class="card-header d-flex align-items-center">
+            <h4>Basic Form</h4>
+          </div>
+          <div class="card-body">
+            <p>Route Method.</p>
+            <form>
+                <div class="form-group row">       
+                  <label class="col-sm-2">Select Route</label>
+                  <div class="col-sm-4">
+                    <select [(ngModel)]="computeForm.route" (change)="routeVal()" id="route" name="route" class="form-control" required>
+                      <option value="">-- Select Route --</option>
+                      <option value="corporate">Corporate</option>
+                      <option value="alpha">Alpha</option>
+                    </select>
+                    <!-- <input id="id" type="text" name="id" class="form-control form-control-success" [(ngModel)]="computeForm.id" value="{{ user_id }}"> -->
+                  </div>  
+                  <label class="col-sm-2">Quantity</label>
+                  <div class="col-sm-4">
+                    <input id="qty" type="number" name="qty" placeholder="0.00" class="form-control form-control-success" [(ngModel)]="computeForm.qty" (blur)="fetchVal()"  required><small class="form-text">Enter Qty</small>
+                    <!-- (blur)="fetchVal()" -->
+                  </div>
+                </div>
+                <div class="form-group row">                         
+                  <label class="col-sm-2">Unit Price</label>
+                  <div class="col-sm-4">
+                    <input id="unit_price" type="text" name="unit_price" placeholder="0.00" class="form-control form-control-success"  [(ngModel)]="computeForm.unit_price" required><small class="form-text">Unit Price</small>
+                  </div>
+                  <label class="col-sm-2">Amount</label>
+                  <div class="col-sm-4">
+                    <input id="amount" type="text" name="amount" placeholder="0.00" class="form-control form-control-success" [(ngModel)]="computeForm.amount" required><small class="form-text">Amount</small>
+                    <!-- <input id="amount" type="hidden" name="amount" placeholder="0.00" class="form-control form-control-success" [(ngModel)]="computeForm.amount" value="{{ computeForm.amount * 0.05 }}" required><small class="form-text">Amount</small> -->
+                    
+                  </div>
+                </div>
+                <div class="form-group row">                         
+                  <label class="col-sm-2">Grand Total</label>
+                  <div class="col-sm-4">
+                    <input id="total" type="text" name="total" placeholder="0.00" readonly="readonly" class="form-control form-control-success" [(ngModel)]="computeForm.total" required><small class="form-text">Total</small>
+                  </div>
+
+                  <label class="col-sm-2">Username</label>
+                  <div class="col-sm-4">
+                    <input id="username" type="text" name="username" readonly="readonly" placeholder="Enter Username" class="form-control form-control-success" [(ngModel)]="computeForm.username" required><small class="form-text">Username</small>
+                  </div>
+                </div>
+              
+              <div class="form-group row">       
+                  <button type="button" class="btn btn-primary" (click)="addProduct()"> Continue >> </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-header d-flex align-items-center">
+            <h4>Compute Record</h4>
+          </div>
+          <div class="card-body">
+              <div class="form-group row">
+                <div class="col-lg-4">
+                  Route: {{ computeForm.route }}<br/>
+                  Quantity: {{ computeForm.qty }}<br/>
+                  Unit Price: N {{ computeForm.unit_price }}<br/>
+                  Amount: N {{ computeForm.qty * computeForm.unit_price}}<br/>
+                  Tax: N {{ computeForm.amount * 0.05 }}<br/>
+                  Total Amount: N {{ computeForm.qty * computeForm.unit_price + computeForm.amount * 0.05 }}<br/>
+                </div>
+              </div>
+          </div>
+          
+          <!-- <div class="card-body">
+              <div class="form-group row" *ngFor="let msg of messageList$">
+                  <div id="sum2" class="col-sm-5">
+                      {{ msg.email }}
+                  </div>
+                </div>
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <app-footer></app-footer>
+</div>
+

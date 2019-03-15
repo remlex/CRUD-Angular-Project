@@ -1,0 +1,120 @@
+<app-nav></app-nav>
+
+<div class="page">
+    
+  <app-header></app-header>
+
+<!-- Breadcrumb-->
+<div class="breadcrumb-holder">
+  <div class="container-fluid">
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="dashboard">Home</a></li>
+      <li class="breadcrumb-item active">Forms</li>
+    </ul>
+  </div>
+</div>
+<section class="forms">
+  <div class="container-fluid">
+    <!-- Page Header-->
+    <!-- <header> 
+    </header> -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header d-flex align-items-center">
+            <h4>Membership Registration</h4>
+          </div>
+          <div class="card-body">
+              <!-- *ngIf="vresults" *ngFor="vresult of vresults"  value="{{vresults.firstname}}" -->
+            <form class="form-horizontal" #customerForm="ngForm">
+              <div class="form-group row">
+                <label class="col-sm-2">Firstname</label>
+                <div class="col-sm-4">
+                  <input id="firstname" type="text" name="firstname" placeholder="Firstname Address" class="form-control form-control-success" [(ngModel)]="vresults.firstname" required>
+                  <input id="id" type="hidden" name="id" placeholder="id" class="form-control form-control-success" [(ngModel)]="vresults.id" required>
+                </div>
+                <label class="col-sm-2">Lastname</label>
+                <div class="col-sm-4">
+                  <input id="lastname" type="text" name="lastname" placeholder="lastname Address" class="form-control form-control-success" [(ngModel)]="vresults.lastname" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-sm-2">Email</label>
+                  <div class="col-sm-4">
+                      <input id="email" type="text" name="email" disabled="disabled" placeholder="Email Address" class="form-control form-control-success" [(ngModel)]="vresults.email" required>
+                  </div>
+                  <label class="col-sm-2">Phone</label>
+                  <div class="col-sm-4">
+                    <input id="phone" type="text" name="phone" placeholder="23480xxxxxxx" class="form-control form-control-success" [(ngModel)]="vresults.phone" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-2">Address</label>
+                  <div class="col-sm-4">
+                      <textarea id="address" type="text" name="address" disabled="disabled" placeholder="Address" class="form-control form-control-success" row="2" [(ngModel)]="vresults.address" required></textarea>
+                  </div>
+                  <label class="col-sm-2">Username</label>
+                  <div class="col-sm-4">
+                    <input id="username" type="text" name="username" disabled="disabled" placeholder="username" class="form-control form-control-success" [(ngModel)]="vresults.username" required>
+                  </div>
+                </div>
+
+              <div class="form-group row">
+                  <label class="col-sm-2">Type</label>
+                  <div class="col-sm-4">
+                      <select id="type" name="type" [(ngModel)]="vresults.type" class="form-control form-control-success" required>
+                          <option value="">-- Types --</option>
+                          <option value="Admin">Admin</option>
+                          <option value="User">User</option>
+                        </select>
+                  </div>
+                  <label class="col-sm-2">Roles</label>
+                  <div class="col-sm-4">
+                      <select id="roles" name="roles" [(ngModel)]="vresults.roles" class="form-control" required>
+                          <option value="">-- Roles --</option>
+                          <option value="Admin">Admin</option>
+                          <option value="User">User</option>
+                        </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-2">Status</label>
+                  <div class="col-sm-4">
+                      <select [(ngModel)]="vresults.status" id="status" name="status" class="form-control" required>
+                          <option value="">-- Select status --</option>
+                          <option value="1">Enabled</option>
+                          <option value="0">Disabled</option>
+                        </select>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2">Password</label>
+                    <div class="col-sm-4">
+                        <input id="password" type="password" name="password" placeholder="xxxxxxxxxxxx" class="form-control form-control-warning" [(ngModel)]="vresults.password"  required>
+                    </div>
+                    <label class="col-sm-2">Confirm Password</label>
+                    <div class="col-sm-4">
+                        <input id="confirm_password" type="password" name="confirm_password" placeholder="xxxxxxxxxxxx" class="form-control form-control-warning" [(ngModel)]="vresults.confirm_password"  required><!--<small class="form-text">Confirm Passsword.</small> -->
+                    </div>
+                  </div>
+
+              <div class="form-group row">       
+                <div class="col-sm-10 offset-sm-2">
+                  <!-- <input type="button" value="Signin" class="btn btn-primary"> -->
+                  <button type="button" class="btn btn-primary" (click)="updateRegister(vresults.id)"> Edit Register >> </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <app-footer></app-footer>
+</div>
